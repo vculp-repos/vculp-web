@@ -46,9 +46,8 @@ body{margin:0; padding:0; font-family: "HanHei SC", "PingHei", "PingFang SC", "S
 * {
     box-sizing: border-box;
 }
-/* ul, li{list-style: none;} */
-h1, h2, h3, h4, h5,h6{margin:0; padding:0;}
-/* ul, li{margin:0; padding:0;} */
+ul, li{list-style: none;}
+ul, li, h1, h2, h3, h4, h5,h6{margin:0; padding:0;}
 a{text-decoration: none; color:#000;}
 img{max-width: 100%;}
 
@@ -62,7 +61,7 @@ img{max-width: 100%;}
 .header .topnav .navoverlay{display:none; transition: ease 0.5s all;}
 .header .topnav .copyrighttxtnav{display:none;}
 .header .topnav .topnavIn .logo, .header .topnav .topnavIn .closemenu{display:none;}
-.header .topnav ul{display:flex;margin:0; padding:0;list-style: none;}
+.header .topnav ul{display:flex;}
 .header .topnav ul li{margin-left:20px;}
 .header .topnav ul li.mobiletabs{display:none;}
 .header .topnav ul li a{padding:0 16px; height: 40px; display:flex; align-items: center; color:#434343; font:600 14px/14px "HanHei SC", "PingHei", "PingFang SC", "STHeitiSC-Light", "Microsoft YaHei", "Helvetica Neue", "Helvetica", "Arial", sans-serif;}
