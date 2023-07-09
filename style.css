@@ -1,0 +1,188 @@
+@font-face {
+    font-family: "Muli";
+    src: url("fonts/Muli.eot");
+    src: url("fonts/Muli.woff") format("woff"),
+    url("fonts/Muli.eot") format("opentype"),
+    url("fonts/Muli.svg#filename") format("svg");
+}
+@font-face {
+    font-family: "Muli-Bold";
+    src: url("fonts/Muli-Bold.eot");
+    src: url("onts/Muli-Bold.woff") format("woff"),
+    url("fonts/Muli-Bold.eot") format("opentype"),
+    url("fonts/Muli-Bold.svg#filename") format("svg");
+}
+@font-face {
+    font-family: "Muli-SemiBold";
+    src: url("fonts/Muli-SemiBold.eot");
+    src: url("fonts/Muli-SemiBold.woff") format("woff"),
+    url("fonts/Muli-SemiBold.eot") format("opentype"),
+    url("fonts/Muli-SemiBold.svg#filename") format("svg");
+}
+@font-face {
+    font-family: "Metropolis-Regular";
+    src: url("fonts/Metropolis-Regular.eot");
+    src: url("fonts/Metropolis-Regular.woff") format("woff"),
+    url("fonts/Metropolis-Regular.eot") format("opentype"),
+    url("fonts/Metropolis-Regular.svg#filename") format("svg");
+}
+@font-face {
+    font-family: "Metropolis-Medium";
+    src: url("fonts/Metropolis-Medium.eot");
+    src: url("fonts/Metropolis-Medium.woff") format("woff"),
+    url("fonts/Metropolis-Medium.eot") format("opentype"),
+    url("fonts/Metropolis-Medium.svg#filename") format("svg");
+}
+@font-face {
+    font-family: "Metropolis-Bold";
+    src: url("fonts/Metropolis-Bold.eot");
+    src: url("fonts/Metropolis-Bold.woff") format("woff"),
+    url("fonts/Metropolis-Bold.eot") format("opentype"),
+    url("fonts/Metropolis-Bold.svg#filename") format("svg");
+}
+
+body{margin:0; padding:0; font-family: "HanHei SC", "PingHei", "PingFang SC", "STHeitiSC-Light", "Microsoft YaHei", "Helvetica Neue", "Helvetica", "Arial", sans-serif; background-color:#FFFFFF;}
+
+* {
+    box-sizing: border-box;
+}
+/* ul, li{list-style: none;} */
+h1, h2, h3, h4, h5,h6{margin:0; padding:0;}
+/* ul, li{margin:0; padding:0;} */
+a{text-decoration: none; color:#000;}
+img{max-width: 100%;}
+
+
+.container{width:100%; max-width: 1200px; margin:0 auto; background-color:#fff; padding:0 40px;}
+.header{margin-bottom: 60px; padding:20px 0 0; display:flex; justify-content: space-between; align-items: center;}
+.header .logo{display:flex; align-items: center; gap:20px;}
+.header .logo img{width:70px;}
+.header .logo span{font:600 24px/28px "HanHei SC", "PingHei", "PingFang SC", "STHeitiSC-Light", "Microsoft YaHei", "Helvetica Neue", "Helvetica", "Arial", sans-serif;}
+.header .logo span small{font-size: 14px; font-weight: 500; display:flex; color:#7B7878;}
+.header .topnav .navoverlay{display:none; transition: ease 0.5s all;}
+.header .topnav .copyrighttxtnav{display:none;}
+.header .topnav .topnavIn .logo, .header .topnav .topnavIn .closemenu{display:none;}
+.header .topnav ul{display:flex;margin:0; padding:0;list-style: none;}
+.header .topnav ul li{margin-left:20px;}
+.header .topnav ul li.mobiletabs{display:none;}
+.header .topnav ul li a{padding:0 16px; height: 40px; display:flex; align-items: center; color:#434343; font:600 14px/14px "HanHei SC", "PingHei", "PingFang SC", "STHeitiSC-Light", "Microsoft YaHei", "Helvetica Neue", "Helvetica", "Arial", sans-serif;}
+.header .topnav ul li.careers{background-color:#50BFA6; border-radius: 4px;}
+.header .topnav ul li.careers a{color:#fff;}
+.header .mobileMenu{display:none;}
+
+.middlecontainer{width:100%;}
+.h1{font-size: 36px; text-align: center; font-weight: 600; margin-bottom: 8px; line-height: 26px;}
+.midheading, .middleTop h1{font-size: 36px; text-align: center; font-weight: 500; margin-bottom: 8px; line-height: normal;}
+.middleTop{margin-bottom: 90px; text-align: center; color:#2F2D2D; font-size:18px; line-height: 30px;}
+.middleTop p{width:80%; margin:0 auto 30px;}
+.middleTop .btnourstory{background-color:#F57359; border-radius:6px; height:40px; padding:0 30px; font-size:16px; color:#fff; text-align: center; line-height: 38px; display:inline-block;}
+
+.valuesboxcontainer{margin-bottom: 90px;}
+.valuenav{margin-bottom: 90px; text-align: center;}
+.valuenav ul{display:flex; justify-content: center; font:500 18px/40px "HanHei SC", "PingHei", "PingFang SC", "STHeitiSC-Light", "Microsoft YaHei", "Helvetica Neue", "Helvetica", "Arial", sans-serif; margin-top: 50px;}
+.valuenav ul li a{border-bottom: 1px solid rgba(164, 164, 164, 0.329412); padding:0 30px 45px 60px; display: flex; align-items: center; position: relative; height: 38px;}
+.valuenav ul li a h2{font:500 18px/40px "HanHei SC", "PingHei", "PingFang SC", "STHeitiSC-Light", "Microsoft YaHei", "Helvetica Neue", "Helvetica", "Arial", sans-serif;}
+.valuenav ul li:first-child a.active{color:#184656; border-bottom: 1px solid #184656;}
+.valuenav ul li:nth-child(2) a.active{color:#FD5E5E; border-bottom: 1px solid #FD5E5E;}
+.valuenav ul li:last-child a.active{color:#50BFA6; border-bottom: 1px solid #50BFA6;}
+.valuenav ul li a .trusticon{background: url(images/trustimg.webp) no-repeat 0 0 /100%; width:40px; height:38px; margin-right: 12px;}
+.valuenav ul li a .collabicon{background: url(images/collaboration.webp) no-repeat 0 0 / 100%; width:40px; height:38px; margin-right: 12px;}
+.valuenav ul li a .freedomicon{background: url(images/freedom.webp) no-repeat 0 0 / 100%; width:40px; height:38px; margin-right: 12px;}
+.valuesboxouter{display:flex; margin-bottom: 90px}
+.valuesboxouter.valuesecondcontainer{flex-direction: row-reverse;}
+.valuesboxouter.valuesecondcontainer .valueboxleft:after{background-color:#F57359; /*clip-path:polygon(3% 1%, 90% 6%, calc(100% - 35px) 76%, 0% 70%);*/ border-radius: 0 70px 190px 90px;}
+.valuesboxouter.valuesecondcontainer .valueboxleft:before{background: #FF865B; top: 50px; left: 50px; height: 75%;}
+.valuesboxouter.valuesecondcontainer .valueboxleft{margin:0 0 0 40px;}
+/*.valuesboxouter .valueboxleft{width:60%;} */
+.valuesboxouter .valueboxright{width:40%;}
+.valuesboxouter .valueboxleft .valueboxleftIn{position: relative; z-index: 2; padding:50px 70px;}
+.valuesboxouter .valueboxleft{position: relative; margin-right:40px; color:#fff; font:400 16px/26px "HanHei SC", "PingHei", "PingFang SC", "STHeitiSC-Light", "Microsoft YaHei", "Helvetica Neue", "Helvetica", "Arial", sans-serif;}
+.valuesboxouter .valueboxleft:before{content:''; background: rgba(119, 150, 254, 0.968627); opacity: 0.5; filter: blur(31.2602px); position: absolute;     width: 80%; height: 90%; top: 20px; left: 20px;}
+.valuesboxouter .valueboxleft:after{content:''; background-color:#184656; position: absolute; width:100%; height: 100%; /*clip-path:polygon(0 0, 100% 0%, calc(100% - 46px) 80%, 0% 100%);*/ left:0; top:0; z-index:1; border-radius:148px 0px 190px 175px;}
+.valuesboxouter .valueboxleft .valueboxheading, .valuesboxouter .valueboxleft h3{font-weight:600; font-size:20px; line-height: 26px; margin-bottom: 20px;}
+
+.subscribebox{text-align: center; color:#2F2D2D; font:400 16px/30px "HanHei SC", "PingHei", "PingFang SC", "STHeitiSC-Light", "Microsoft YaHei", "Helvetica Neue", "Helvetica", "Arial", sans-serif; width:60%; margin: 90px auto;}
+.subscribebox h3{font:600 24px 'Mulish', sans-serif;}
+.subscribebox .inputboxouter{display:flex; justify-content: center;}
+.subscribebox .inputboxouter .search{height:55px; width:100%; background:rgba(216, 216, 216, 0.388235); border-radius:8px 0 0 8px; border:0; outline:none; padding:0 20px; font:200 18px/30px "HanHei SC", "PingHei", "PingFang SC", "STHeitiSC-Light", "Microsoft YaHei", "Helvetica Neue", "Helvetica", "Arial", sans-serif;}
+.subscribebox .inputboxouter .btnsubmit{background:#130242; border-radius:5px; color:#fff; border:0; padding:0 30px; font:800 16px/30px "HanHei SC", "PingHei", "PingFang SC", "STHeitiSC-Light", "Microsoft YaHei", "Helvetica Neue", "Helvetica", "Arial", sans-serif; cursor: pointer; display:flex; align-items: center;}
+.subscribebox .inputboxouter .btnsubmit:after{content:''; background:url(images/arrow.png) no-repeat 0 0 /100% 100%; width: 18px; height: 17px; margin-left: 5px;}
+
+.aboutusbg{background: rgba(211, 211, 211, 0.298039) url(images/aboutbg.png) no-repeat center 10% / 70%; padding:30px; border-radius:30px;}
+.aboutusbg .aboutus{font-size: 14px; color:#2F2D2D;}
+.aboutusbg .aboutus h1{font-size: 30px; font-weight: 600; margin: 0 0 20px; padding:0;}
+.aboutusbg .aboutus h4, .aboutusbg .aboutus h2{font-size: 20px; font-weight: 600; margin-bottom: 20px;}
+.footer{position: relative; margin-top: 90px; padding-top: 30px; font-family: "HanHei SC", "PingHei", "PingFang SC", "STHeitiSC-Light", "Microsoft YaHei", "Helvetica Neue", "Helvetica", "Arial", sans-serif;}
+.footer .footerbg{background: url(images/footerbg.png) no-repeat 0 0 / cover;}
+.footer .footerIn{display:flex; padding: 30px 0;}
+.footer:before{content:''; background-color: rgba(188, 208, 229, 0.498039); height:1px; width: 100%; max-width: 1200px; left:50%; top:0; position: absolute; transform: translateX(-50%);}
+.footer .leftbox1{width: 43%; padding-left: 5%;}
+.footer .leftbox1 .footerlogo{display:flex; align-items: center; gap:20px;}
+.footer .leftbox1 .footerlogo img{width:40px;}
+.footer .leftbox1 .footerlogo span{font:800 20px/20px "HanHei SC", "PingHei", "PingFang SC", "STHeitiSC-Light", "Microsoft YaHei", "Helvetica Neue", "Helvetica", "Arial", sans-serif;}
+.footer .leftbox1 .footerlogo span small{font-size: 12px; font-weight: 500; display:flex; color:#7B7878;}
+.footer .leftbox1 ul{padding:20px 0 0 50px;}
+.footer .leftbox1 ul li{font-size: 14px; margin-bottom:12px;}
+.footer .leftbox1 ul li a{color:#544837; display:flex; align-items: center; padding-left: 27px;}
+.footer .leftbox1 ul li a.fbicon{content:''; background: url(images/facebook.png) no-repeat 0 0; width:9px; height: 17px;}
+.footer .leftbox1 ul li a.twticon{content:''; background: url(images/twitter.png) no-repeat 0 0; width:17px; height: 15px;}
+.footer .leftbox1 ul li a.instaicon{content:''; background: url(images/instagram.png) no-repeat 0 0; width:17px; height: 17px;}
+.footer .leftbox2{width: 27%; padding-left: 5%;}
+.footer .leftbox2 ul li{font:800 18px/26px "HanHei SC", "PingHei", "PingFang SC", "STHeitiSC-Light", "Microsoft YaHei", "Helvetica Neue", "Helvetica", "Arial", sans-serif; color: #2F281E;}
+.footer .leftbox2 ul li a{font-size: 14px; font-weight: 500; color:#544837;}
+.footer .copyrighttxt{text-align: center; padding-bottom: 60px; font:500 15px/15px "HanHei SC", "PingHei", "PingFang SC", "STHeitiSC-Light", "Microsoft YaHei", "Helvetica Neue", "Helvetica", "Arial", sans-serif; color:#544837}
+
+@media screen and (max-width:767px){
+    .container{padding:20px;}
+    .header{margin-bottom: 40px; padding:0; align-items: flex-start;}
+    .header .logo{gap:10px;}
+    .header .logo img {width: 40px;}
+   /* .header .logo span {font: 800 18px/18px "HanHei SC", "PingHei", "PingFang SC", "STHeitiSC-Light", "Microsoft YaHei", "Helvetica Neue", "Helvetica", "Arial", sans-serif;}*/
+    .header .logo span small {font-size: 12px;}
+    .header .mobileMenu{display:block; margin-left: auto;}
+    .header .topnav .navoverlay{background-color: rgba(0,0,0,0.6); transform: translateX(100%); position: fixed; left:0; top:0; width:100%; height:100%; cursor: pointer;}
+    .header .topnav .navoverlay.openoverlay{display:block;}
+    .header .topnav .copyrighttxtnav{margin-top: auto; display: block; text-align: center; font-size:12px; line-height: 36px; color:#544837;}
+    .header .topnav{position: fixed; left:0; transform: translateX(-100%); top:0; width:90vw; height: 100%; transition: 0.5s all; z-index: 5;}
+    .header .topnav.open{transform: translateX(0%);}
+    .header .topnav .topnavIn{background-color:#fff; position: relative; z-index:3; height: 100%; display:flex; flex-direction: column;}
+    .header .topnav .topnavIn .logo{padding:40px 20px; display:flex;}
+    .header .topnav .topnavIn .closemenu {position: absolute; right:15px; top:15px; background: transparent; cursor: pointer; border: 0; text-indent: -99999px; width: 20px; height: 20px; display: block;}
+    .header .topnav .topnavIn .closemenu:after, .header .topnav .topnavIn .closemenu:before{position: absolute; left: 9px; content: ' '; height: 15px; width: 2px; background-color: #000; top: 3px;}
+    .header .topnav .topnavIn .closemenu:after {transform: rotate(45deg);}
+    .header .topnav .topnavIn .closemenu:before {transform: rotate(-45deg)}
+    .header .topnav ul{flex-direction: column;}
+    .header .topnav ul li{margin:0; position: relative;}
+    .header .topnav ul li.mobiletabs{display:block;}
+    .header .topnav ul li.careers{order:-3; border-radius:0;}
+    .header .topnav ul li.careers a{justify-content: center}
+    .header .topnav ul li.careers a:after, .header .topnav ul li.careers a:before{content:inherit;}
+    .header .topnav ul li a{padding-left: 35px; height: 45px;}
+    .header .topnav ul li a:after, .header .topnav ul li a:before{border: solid #434343; border-width: 1px 1px 0 0; content: ""; height: 4px; position: absolute; left: 10px; top: 50%; transform: rotate(45deg) translateY(-50%); width:4px;}
+    .header .topnav ul li a:before{left:14px;}
+    .middleTop {margin-bottom:40px;font-size:14px;line-height:26px}
+    .middleTop h1{font-size:22px;line-height:32px;}
+    .middleTop p{width:100%;}
+    .valuesboxouter{flex-direction: column;margin-bottom:20px;}
+    .valuesboxouter .valueboxleft, .valuesboxouter .valueboxright{width:100%;}
+    .valuesboxouter .valueboxright{margin-top:20px;display:none;}
+    .valuesboxouter.valuesecondcontainer{flex-direction: column;}
+    .valuesboxouter.valuesecondcontainer .valueboxleft{margin:0;}
+    .subscribebox{width:100%;}
+    .footer .footerIn{flex-direction: column; gap:20px;}
+    .footer .leftbox1, .footer .leftbox2{width:100%; padding:0;}
+/*    .footer .leftbox1{display: flex; gap: 30px; align-items: flex-start;}*/
+    .footer .leftbox2 ul li br{display:none;content:'';}
+    .footer .leftbox1 ul{padding:0; margin-top: 30px;}
+    .valuenav {margin-bottom:20px;}
+    .valuenav ul{overflow-x: scroll; overflow-y: hidden; white-space: nowrap; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; display:block;font-size:16px;line-height:32px;}
+    .valuenav ul li{scroll-snap-align: start; scroll-snap-stop: normal; display: inline-flex;}
+    .valuenav ul li a{height:auto; padding: 0 20px 20px 0;}
+    .midheading{font-size: 24px;}
+    .aboutusbg{padding:20px; border-radius:10px;}
+    .valuesboxouter .valueboxleft .valueboxleftIn{padding:40px;}
+    .valuesboxouter .valueboxleft:after, .valuesboxouter.valuesecondcontainer .valueboxleft:after{clip-path: none; border-radius: 10px 10px 0 10px;}
+    .subscribebox .inputboxouter .search{height:34px;}
+    .subscribebox .inputboxouter .btnsubmit{padding:0 10px; border-radius:3px; font-size:14px;}
+}
+
