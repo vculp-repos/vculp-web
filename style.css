@@ -169,6 +169,7 @@ img{max-width: 100%;}
     .valuesboxouter.valuesecondcontainer .valueboxleft{margin:0;}
     .subscribebox{width:100%;}
     .footer .footerIn{flex-direction: column; gap:20px;}
+    .footer .leftbox2{display:none;}
     .footer .leftbox1, .footer .leftbox2{width:100%; padding:0;}
 /*    .footer .leftbox1{display: flex; gap: 30px; align-items: flex-start;}*/
     .footer .leftbox2 ul li br{display:none;content:'';}
