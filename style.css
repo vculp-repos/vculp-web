@@ -129,7 +129,7 @@ img{max-width: 100%;}
 .footer .leftbox2{width: 27%; padding-left: 5%;}
 .footer .leftbox2 ul li{font:800 18px/26px "HanHei SC", "PingHei", "PingFang SC", "STHeitiSC-Light", "Microsoft YaHei", "Helvetica Neue", "Helvetica", "Arial", sans-serif; color: #2F281E;}
 .footer .leftbox2 ul li a{font-size: 14px; font-weight: 500; color:#544837;}
-.footer .copyrighttxt{text-align: center; padding-bottom: 60px; font:500 15px/15px "HanHei SC", "PingHei", "PingFang SC", "STHeitiSC-Light", "Microsoft YaHei", "Helvetica Neue", "Helvetica", "Arial", sans-serif; color:#544837}
+.footer .copyrighttxt{text-align: center; padding-bottom: 60px; font:500 14px/15px "HanHei SC", "PingHei", "PingFang SC", "STHeitiSC-Light", "Microsoft YaHei", "Helvetica Neue", "Helvetica", "Arial", sans-serif; color:#544837}
 
 @media screen and (max-width:767px){
     .container{padding:20px;}
