@@ -128,15 +128,30 @@
 <h4Conclusion</h4>
 
 <p>Protecting your privacy is of utmost importance to us. This Privacy Policy aims to provide transparency regarding the collection, use, and protection of your personal information. By using our services and website, you acknowledge that you have read and understood this Privacy Policy.</p>
-        </div>
-        <div class="subscribebox">
+          </div>
+      </div>
+        <!-- <div class="subscribebox">
             <h3>Subscribe Us</h3>
             <p>Keep watching this space for latest updates, upcoming projects & announcements</p>
             <div class="inputboxouter">
                 <input type="text" name="subscribe" class="search" /><button name="submit" area-lable-name="submit" class="btnsubmit">Subscribe</button>
             </div>
-        </div>
-    </div>
+        </div> -->
+        <div class="subscribebox" id="subscribe-widget"></div>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('subscribe/subscribe.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('subscribe-widget').innerHTML = html;
+                const script = document.createElement('script');
+                script.src = 'subscribe/subscribe.js';
+                document.body.appendChild(script);
+            })
+            .catch(error => console.error('Error:', error));
+        });
+        </script>
     <div class="footer">
         <div class="footerbg">
         <div class="footerIn">
