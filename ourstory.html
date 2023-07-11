@@ -84,15 +84,30 @@
 <p>Certainly! At Vculp, there is an unwavering belief in the power of technology, the non-profit model, and the open-source philosophy. The organization has witnessed firsthand the positive impact that technology can have on individuals, communities, and the world at large. The non-profit model enables Vculp to prioritize social impact over financial gains, allowing for a dedicated focus on sustainable solutions to address societal challenges. Moreover, the open-source principles embraced by Vculp encourage collaboration, innovation, and the democratization of knowledge.</p>
 
 <p>These deeply ingrained beliefs are at the core of Vculp's existence. They serve as guiding principles for decision-making, fuel the passion that drives its work, and inspire continuous exploration of new ways to leverage technology for the betterment of society. Committed to its mission and values, Vculp invites others to join in the belief that technology can be a powerful force for positive change.</p>
-        </div>
-        <div class="subscribebox">
+              </div>
+      </div>
+        <!-- <div class="subscribebox">
             <h3>Subscribe Us</h3>
             <p>Keep watching this space for latest updates, upcoming projects & announcements</p>
             <div class="inputboxouter">
                 <input type="text" name="subscribe" class="search" /><button name="submit" area-lable-name="submit" class="btnsubmit">Subscribe</button>
             </div>
-        </div>
-    </div>
+        </div> -->
+        <div class="subscribebox" id="subscribe-widget"></div>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('subscribe/subscribe.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('subscribe-widget').innerHTML = html;
+                const script = document.createElement('script');
+                script.src = 'subscribe/subscribe.js';
+                document.body.appendChild(script);
+            })
+            .catch(error => console.error('Error:', error));
+        });
+        </script>
     <div class="footer">
         <div class="footerbg">
         <div class="footerIn">
