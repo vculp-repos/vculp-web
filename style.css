@@ -185,7 +185,7 @@ img{max-width: 100%;}
     .aboutusjobslink{padding-bottom: 15px;}
     .valuesboxouter .valueboxleft .valueboxleftIn{padding:40px;}
     .valuesboxouter .valueboxleft:after, .valuesboxouter.valuesecondcontainer .valueboxleft:after{clip-path: none; border-radius: 10px 10px 0 10px;}
-    .subscribebox .inputboxouter .search{height:34px;}
+    .subscribebox .inputboxouter .search{height:34px;font-size:14px;}
     .subscribebox .inputboxouter .btnsubmit{padding:0 10px; border-radius:3px; font-size:14px;}
 }
 
