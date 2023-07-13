@@ -109,6 +109,8 @@ img{max-width: 100%;}
 
 .aboutusbg{background: rgba(211, 211, 211, 0.298039) url(images/aboutbg.png) no-repeat center 10% / 70%; padding:30px; border-radius:30px;}
 .aboutusbg .aboutus{font-size: 14px; color:#2F2D2D;}
+.aboutusbg .aboutus .aboutusjobsheading{display: flex;justify-content: space-between;font-weight: 600; margin: 0 0 20px; padding:0;align-items: center;}
+.aboutusjobslink{margin-right: 10px;color:#0066CC}
 .aboutusbg .aboutus h1{font-size: 30px; font-weight: 600; margin: 0 0 20px; padding:0;}
 .aboutusbg .aboutus h4, .aboutusbg .aboutus h2{font-size: 20px; font-weight: 600; margin-bottom: 20px;}
 .footer{position: relative; margin-top: 90px; padding-top: 30px; font-family: "HanHei SC", "PingHei", "PingFang SC", "STHeitiSC-Light", "Microsoft YaHei", "Helvetica Neue", "Helvetica", "Arial", sans-serif;}
@@ -180,6 +182,7 @@ img{max-width: 100%;}
     .valuenav ul li a{height:auto; padding: 0 20px 20px 0;}
     .midheading{font-size: 24px;}
     .aboutusbg{padding:20px; border-radius:10px;}
+    .aboutusjobslink{padding-bottom: 15px;}
     .valuesboxouter .valueboxleft .valueboxleftIn{padding:40px;}
     .valuesboxouter .valueboxleft:after, .valuesboxouter.valuesecondcontainer .valueboxleft:after{clip-path: none; border-radius: 10px 10px 0 10px;}
     .subscribebox .inputboxouter .search{height:34px;}
