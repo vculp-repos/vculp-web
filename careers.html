@@ -36,7 +36,7 @@
 <body>
 <div class="container">
       <div class="header">
-        <a href="https://www.vculp.org"><div class="logo"><img src="images/vculp-logo.png" alt="Logo"> 
+        <a href="/"><div class="logo"><img src="images/vculp-logo.png" alt="Logo"> 
             <span>vculp.org
         <small>A Non-Profit Marketplace</small></span>
         </div></a>
@@ -57,12 +57,11 @@
                 </div>
                 <ul>
                     <li><a href="ourstory.html">Our Story</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li class="careers"><a href="careers.html">Join us</a></li>
-                    <li class="mobiletabs"><a href="javascript://">About Us</a></li>
-                    <li class="mobiletabs"><a href="javascript://">Blog</a></li>
-                    <li class="mobiletabs"><a href="javascript://">Contact</a></li>
-                    <li class="mobiletabs"><a href="javascript://">FAQ</a></li>
+                   <!-- <li><a href="#">Blog</a></li>-->
+                     <li class="careers"><a href="careers.html">Join Us</a></li>
+                  <li class="mobiletabs"><a href="privacy.html">Privacy</a></li>
+                    <li class="mobiletabs"><a href="terms.html">Terms</a></li>
+               <!--     <li class="mobiletabs"><a href="javascript://">FAQ</a></li> -->
                 </ul>
                 <div class="copyrighttxtnav">© 2023 vculp.org All rights reserved.</div>
             </div>
@@ -70,7 +69,7 @@
     </div>
     <div class="middlecontainer aboutusbg">
         <div class="aboutus">
-            <h1>Careers</h1>
+            <div class="aboutusjobsheading"><h1>Careers</h1><a class="aboutusjobslink" href="https://forms.gle/dkbSGQy6GKh8SD4M6">Reach Us &raquo;</a></div>
            <h4>I think I'm a developer</h4>
             <p>If you have a passion for coding, problem-solving, and building innovative solutions, we welcome you to join our platform. Whether you're an experienced developer or just starting your coding journey, we believe in providing a supportive environment for you to grow and excel. As a developer, you'll have the opportunity to collaborate with like-minded individuals, share your expertise, and contribute to exciting projects. From front-end development to back-end programming, we value diverse skills and encourage continuous learning. Join us to leverage your coding abilities, tackle challenges, and make a real impact in the tech community.</p>
             
@@ -86,14 +85,29 @@
             <h4>I'm unsure</h4>
             <p>If you're unsure about your specific role or contribution, don't worry! Our platform is designed to accommodate a wide range of skills, interests, and levels of experience. We welcome individuals who are curious, open-minded, and eager to learn. Join us to explore various opportunities, discover your strengths, and find your passion within our supportive community. You'll have the chance to engage in different projects, collaborate with talented individuals, and receive guidance and mentorship along the way. Embrace the journey of self-discovery, personal growth, and skill development as you navigate your way in our platform.</p>
         </div>
-        <div class="subscribebox">
+    </div>
+         <!-- <div class="subscribebox">
             <h3>Subscribe Us</h3>
             <p>Keep watching this space for latest updates, upcoming projects & announcements</p>
             <div class="inputboxouter">
                 <input type="text" name="subscribe" class="search" /><button name="submit" area-lable-name="submit" class="btnsubmit">Subscribe</button>
             </div>
-        </div>
-    </div>
+        </div> -->
+        <div class="subscribebox" id="subscribe-widget"></div>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('subscribe/subscribe.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('subscribe-widget').innerHTML = html;
+                const script = document.createElement('script');
+                script.src = 'subscribe/subscribe.js';
+                document.body.appendChild(script);
+            })
+            .catch(error => console.error('Error:', error));
+        });
+        </script>
    <div class="footer">
         <div class="footerbg">
         <div class="footerIn">
