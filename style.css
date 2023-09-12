@@ -107,6 +107,16 @@ img{max-width: 100%;}
 .subscribebox .inputboxouter .btnsubmit{background:#130242; border-radius:5px; color:#fff; border:0; padding:0 30px; font:800 16px/30px "HanHei SC", "PingHei", "PingFang SC", "STHeitiSC-Light", "Microsoft YaHei", "Helvetica Neue", "Helvetica", "Arial", sans-serif; cursor: pointer; display:flex; align-items: center;}
 .subscribebox .inputboxouter .btnsubmit:after{content:''; background:url(images/arrow.png) no-repeat 0 0 /100% 100%; width: 18px; height: 17px; margin-left: 5px;}
 
+/* .registrationform{text-align: center; color:#2F2D2D; font:400 16px/30px "HanHei SC", "PingHei", "PingFang SC", "STHeitiSC-Light", "Microsoft YaHei", "Helvetica Neue", "Helvetica", "Arial", sans-serif; width:60%; margin: 90px auto;} */
+.registrationform{color:#2F2D2D; font:400 16px/30px "HanHei SC", "PingHei", "PingFang SC", "STHeitiSC-Light", "Microsoft YaHei", "Helvetica Neue", "Helvetica", "Arial", sans-serif; width:50%;}
+.registrationform h3{font:600 24px 'Mulish', sans-serif;}
+.registrationform .inputboxouter{justify-content: center;}
+.registrationform .inputboxouter .search{display:flex;margin-bottom: 10px; height:55px; width:100%; background:rgba(216, 216, 216, 0.388235); border-radius:8px 0 0 8px; border:0; outline:none; padding:0 20px; font:200 16px/30px "HanHei SC", "PingHei", "PingFang SC", "STHeitiSC-Light", "Microsoft YaHei", "Helvetica Neue", "Helvetica", "Arial", sans-serif;}
+.registrationform .inputboxouter .searchdrop{display:flex;margin-bottom: 10px; height:55px; width:100%; background:rgba(216, 216, 216, 0.388235); border-radius:8px 0 0 8px; border:0; outline:none; padding:0 20px; font:200 16px/30px "HanHei SC", "PingHei", "PingFang SC", "STHeitiSC-Light", "Microsoft YaHei", "Helvetica Neue", "Helvetica", "Arial", sans-serif; -webkit-appearance: none;-moz-appearance: none;background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");background-repeat: no-repeat;background-position-x: 98%;background-position-y: 13px;}
+
+.registrationform .inputboxouter .btnsubmit{background:#130242;height:55px;width:50%;  border-radius:5px; color:#fff; border:0; padding:0 20px; font:800 16px/30px "HanHei SC", "PingHei", "PingFang SC", "STHeitiSC-Light", "Microsoft YaHei", "Helvetica Neue", "Helvetica", "Arial", sans-serif; cursor: pointer; display:inline-flex; align-items: center;}
+.registrationform .inputboxouter .btnsubmit:after{content:'';height:55px; width:50%; background:url(images/arrow.png) no-repeat 0 0 /100% 100%; width: 18px; height: 17px; margin-left: 5px;}
+
 .aboutusbg{background: rgba(211, 211, 211, 0.298039) url(images/aboutbg.png) no-repeat center 10% / 70%; padding:30px; border-radius:30px;}
 .aboutusbg .aboutus{font-size: 14px; color:#2F2D2D;}
 .aboutusbg .aboutus .aboutusjobsheading{display: flex;justify-content: space-between;font-weight: 600; margin: 0 0 20px; padding:0;align-items: center;}
@@ -187,5 +197,8 @@ img{max-width: 100%;}
     .valuesboxouter .valueboxleft:after, .valuesboxouter.valuesecondcontainer .valueboxleft:after{clip-path: none; border-radius: 10px 10px 0 10px;}
     .subscribebox .inputboxouter .search{height:34px;font-size:14px;}
     .subscribebox .inputboxouter .btnsubmit{padding:0 10px; border-radius:3px; font-size:14px;}
+    .registrationform{width:auto;}
+    .registrationform .inputboxouter .search{height:34px;font-size:14px;}
+    .registrationform .inputboxouter .btnsubmit{padding:0 10px; border-radius:3px; font-size:14px;}
 }
 
