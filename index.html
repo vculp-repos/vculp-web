@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<title>vculp.org is launching soon</title>
+<title>The only Non-profit Ecommerce Marketplace | vculp.org </title>
 <meta name="robots" content="noindex, nofollow">
 
 <!-- Google tag (gtag.js) -->
@@ -12,73 +12,232 @@
   gtag('js', new Date());
 
   gtag('config', 'G-LZD1KJT0TK');
-  
 </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
-   <!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400,700&display=swap" rel="stylesheet"> -->
-    <style>
-        body {
-            font-family: "Ubuntu", Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background-color: #000; /* Set a background color to complement the image */
-        }       
-        .bg-img {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-           /*height: 100%; */
-            opacity: 0.7; /* Adjust the opacity value as per your preference */
-            z-index: -1; /* Place the image behind the content */
-        }
-      .logo {
-            margin-top: 50px;
-            }
-       .logo img {
-           width:100px;
-            height:100px     
-            }
-      .mouseimg{
-           width:400px;
-            height:400px
-        }
-
-        h1 {
-            font-family: "Ubuntu", sans-serif; /* Use the custom font for h1 */
-            font-size: 56px;
-          /*  margin-top: 100px; */
-            color: #fff; /* Set text color to white to contrast with the map */
-        }
-
-        p {
-            font-size: 18px;
-            margin-top: 10px;
-            color: #fff; /* Set text color to white to contrast with the map */
-            margin: 30px 100px 50px;
-        }
-
-        .headline {
-            font-size: 24px;
-            margin-top: 30px;
-            font-weight: bold;
-            color: #fff; /* Set text color to white to contrast with the map */
-        }
-    </style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Metrophobic:wght@400&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<link href="style.css" rel="stylesheet" type="text/css" />
+    <script>
+        $(document).ready(function(){
+            $(".mobileMenu a").click(function(){
+            $('.topnav').addClass('open');
+            $('.navoverlay').addClass('openoverlay');
+            $('boyd,html').css('overflow','hidden');
+          });
+            
+            $(".closemenu").click(function(){
+            $('.topnav').removeClass('open');
+            $('.navoverlay').removeClass('openoverlay');
+            $('boyd,html').css('overflow','');
+        });
+            $('.tab1').click(function(){
+                $('.tab1content').show();
+                $('.tab2content').hide();
+                $('.tab3content').hide();
+                $('.tab1, .tab2, .tab3').removeClass('active');
+                $(this).addClass('active');
+            });
+            $('.tab2').click(function(){
+                $('.tab1content').hide();
+                $('.tab2content').show();
+                $('.tab3content').hide();
+                $('.tab1, .tab2, .tab3').removeClass('active');
+                $(this).addClass('active');
+            });
+            $('.tab3').click(function(){
+                $('.tab1content').hide();
+                $('.tab2content').hide();
+                $('.tab3content').show();
+                $('.tab1, .tab2, .tab3').removeClass('active');
+                $(this).addClass('active');
+            });
+        });
+    </script>
 </head>
 <body>
- <img class="bg-img" src="img/bg2.jpg">
- <div class="logo">
-        <img src="img/logo.png" alt="Logo">
-  </div>
-  <h1>Coming Soon</h1>
-<p class="headline">Affordable Rides, Maximum Revenue. Sustainable &amp; Scalable</p>
-    <p>Our Ride Hailing Services app is designed to bridge the gap between drivers and riders. We support our drivers by helping them earn more both during and between rides. For our riders, we offer affordable fares that adhere to government regulations. This special blend is supported by a distinctive value proposition, set to launch in <b>October 2023</b></p>
-  <div>
-        <img src="img/workingmouse.png" alt="working image" class="mouseimg">     
+<div class="container">
+    <div class="header">
+        <a href="/"><div class="logo"><img src="images/vculp-logo.png" alt="Logo"> 
+            <span>vculp.org
+        <small>A Non-Profit Marketplace</small></span>
+        </div></a>
+        <div class="mobileMenu">
+            <a href="javascript://">
+                <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4 5C3.44772 5 3 5.44772 3 6C3 6.55228 3.44772 7 4 7H20C20.5523 7 21 6.55228 21 6C21 5.44772 20.5523 5 20 5H4ZM7 12C7 11.4477 7.44772 11 8 11H20C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13H8C7.44772 13 7 12.5523 7 12ZM13 18C13 17.4477 13.4477 17 14 17H20C20.5523 17 21 17.4477 21 18C21 18.5523 20.5523 19 20 19H14C13.4477 19 13 18.5523 13 18Z" fill="#000000"/>
+</svg>
+            </a>
+        </div>
+        <div class="topnav">
+            <span class="navoverlay"></span>
+            <div class="topnavIn">
+                <button name="close" aria-label-name="closemenu" class="closemenu"></button>
+                <div class="logo"><img src="images/vculp-logo.png" alt="Logo" /> 
+                    <span>vculp.org
+                    <small>A Non-Profit Marketplace</small></span>
+                </div>
+                <ul>
+                    <li><a href="ourstory.html">Our Story</a></li>
+                   <!-- <li><a href="#">Blog</a></li>-->
+                   <li class="careers"><a href="careers.html">Join Us</a></li>
+                  <li class="mobiletabs"><a href="privacy.html">Privacy</a></li>
+                    <li class="mobiletabs"><a href="terms.html">Terms</a></li>
+               <!--     <li class="mobiletabs"><a href="javascript://">FAQ</a></li> -->
+                </ul>
+                <div class="copyrighttxtnav">© 2023 vculp.org All rights reserved.</div>
+            </div>
+        </div>
     </div>
+    <div class="middlecontainer">
+        <div class="middleTop">
+            <h1>Decentralized eCommerce Marketplace</h1>
+            <p>An <strong>Open Source</strong> &amp; <b>Non-Profit</b> initiative to democatize the marketplace. Backed by a community of independent collaborators, members, engineers, designers and bots across the globe.
+
+               </p>
+<p>
+    "Built for the people, by the people"</p>
+            <a href="ourstory.html" class="btnourstory">Our Story</a>
+        </div>
+        <div class="valuesboxcontainer">
+        <!-- <div class="midheading">Our Values</div> -->
+            <div class="valuenav">
+                <ul>
+                    <li><a href="javascript://" class="tab1 active"><span class="trusticon"></span><h2>Trust</h2></a></li>
+                    <li><a href="javascript://" class="tab2"><span class="collabicon"></span><h2>Collaboration</h2></a></li>
+                    <li><a href="javascript://" class="tab3"><span class="freedomicon"></span><h2>Freedom</h2></a></li>
+                </ul>
+            </div>
+            <div class="tab1content">
+            <div class="valuesboxouter">
+                <div class="valueboxleft">
+                    <div class="valueboxleftIn">
+                <h3>Reliability & Integrity at its Core</h3>
+                Vculp ensures transparency, immutability, & accountability. Each transaction & interaction is executed on a decentralized ecosystem, reducing the risk of fraud & creating a level playing field for all participants & at the same time respecting data privacy.
+                        </div>
+                </div>
+                <div class="valueboxright"><img src="images/ourvaluesimg.png" alt="" /></div>
+            </div>
+            <div class="valuesboxouter valuesecondcontainer">
+                <div class="valueboxleft">
+                    <div class="valueboxleftIn">
+                <h3>Built on Verified Reputation Systems</h3>
+                Implementing a robust reputation system enables buyers & sellers to assess the trustworthiness of their counterparts. Feedback & ratings provide valuable insights, fostering a community-driven environment where trust is earned & maintained.
+ 
+                    </div>
+                </div>
+                <div class="valueboxright"><img src="images/ourvaluesimg1.png" alt="" /></div>
+            </div>
+            </div>
+            <div class="tab2content" style="display: none">
+                <div class="valuesboxouter valuesecondcontainer">
+                <div class="valueboxleft">
+                    <div class="valueboxleftIn">
+                <h3>Community Engagement & Participation</h3>
+                The marketplace encourages active community participation, allowing users to share knowledge, provide feedback, & collectively shape the platform's future. Collaborative decision-making empowers the community & ensures that the marketplace evolves to meet their evolving needs
+                    </div>
+                </div>
+                <div class="valueboxright"><img src="images/ourvaluesimg1.png" alt="" /></div>
+            </div>
+            <div class="valuesboxouter">
+                <div class="valueboxleft">
+                    <div class="valueboxleftIn">
+                <h3>Shared Resources & Expertise</h3>
+                Participants in the decentralized marketplace can tap into a pool of shared resources, such as tech, design, algorithms solving for exeperience & enabling cost efficiencies. Additionally, knowledge-sharing opportunities promote collaborative learning & growth for all pariticipants
+                        </div>
+                </div>
+                <div class="valueboxright"><img src="images/ourvaluesimg.png" alt="" /></div>
+            </div>
+            </div>
+            <div class="tab3content" style="display: none">
+            <div class="valuesboxouter">
+                <div class="valueboxleft">
+                    <div class="valueboxleftIn">
+                <h3>Free To Do Whatever</h3>
+                Vculp champions individual freedom, offering a departure from traditional centralized models. It provides equal opportunities for buyers & sellers worldwide, transcending geographical barriers. It enables small businesses & entrepreneurs to reach a global customer base, empowering them with economic freedom & opportunities for growth
+
+                        </div>
+                </div>
+                <div class="valueboxright"><img src="images/ourvaluesimg.png" alt="" /></div>
+            </div>
+            <div class="valuesboxouter valuesecondcontainer">
+                <div class="valueboxleft">
+                    <div class="valueboxleftIn">
+                <h3>Built on the Global Privacy Standards</h3>
+               Users of vculp have greater control over their personal data. By leveraging open source technologies & collaborative development, individuals can protect their information while enjoying the benefits of online transactions, ensuring their digital freedom.
+                    </div>
+                </div>
+                <div class="valueboxright"><img src="images/ourvaluesimg1.png" alt="" /></div>
+            </div>
+            </div>
+        </div>
+        
+                 
+        <!-- <div class="subscribebox">
+            <h3>Subscribe Us</h3>
+            <p>Keep watching this space for latest updates, upcoming projects & announcements</p>
+            <div class="inputboxouter">
+                <input type="text" name="subscribe" class="search" /><button name="submit" area-lable-name="submit" class="btnsubmit">Subscribe</button>
+            </div>
+        </div> -->
+        <div class="subscribebox" id="subscribe-widget"></div>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('forms/subscribe.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('subscribe-widget').innerHTML = html;
+                const script = document.createElement('script');
+                script.src = 'forms/subscribe.js';
+                document.body.appendChild(script);
+            })
+            .catch(error => console.error('Error:', error));
+        });
+        </script>
+    </div>
+    <div class="footer">
+        <div class="footerbg">
+        <div class="footerIn">
+            <div class="leftbox1">
+                <div class="footerlogo"><img src="images/vculp-logo.png" alt="Logo" /> 
+                    <span>vculp.org
+                    <small>A Non-Profit Marketplace</small></span>
+                </div>
+                <ul>
+                    <li><a href="javscript;//" class="fbicon">Facebook</a></li>
+                    <li><a href="javscript;//" class="twticon">Twitter</a></li>
+                    <li><a href="javscript;//" class="instaicon">Instagram</a></li>
+                </ul>
+            </div>
+            <div class="leftbox2">
+                <ul>
+                    <li>Quick Links</li>
+                    <li>&nbsp;</li>
+                    <li><a href="ourstory.html">About Us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="https://forms.gle/WtJXTgQ3Vo5C7EeC8">Contact</a></li>
+                <!--    <li><a href="javascript://">FAQ</a></li> -->
+                </ul>
+            </div>
+            <div class="leftbox2">
+                <ul>
+                    <li>Legal Stuff</li>
+                    <li>&nbsp;</li>
+                  <!--  <li><a href="javascript://">Disclaimer</a></li> -->
+                    <li><a href="javascript://">Financing</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyrighttxt">sd© 2023 vculp.org All rights reserved.</div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
