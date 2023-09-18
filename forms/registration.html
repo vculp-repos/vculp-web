@@ -4,9 +4,9 @@
   action="https://script.google.com/macros/s/AKfycbwMVo8NSMQoF3LNjx0DgKJV5VwIrkigHzg6_MjzCmv0aVccTxr6g7KwgSGL2q-gQyUI5g/exec"
   method="POST">
   <div class="inputboxouter">
-    <input type="name" name="name" class="search" required placeholder="*Please enter your full name" />
+    <input type="name" name="name" class="search" required autocomplete="name" placeholder="*Please enter your full name" />
     <input type="mobile" name="mobile" class="search" required placeholder="*+919876543210" />
-    <input type="email" name="email" class="search" placeholder="example@domain.com" />
+    <input type="email" name="email" class="search"  autocomplete="email" placeholder="example@domain.com" />
     <select type="issuetype" name="issuetype" class="searchdrop">
       <option value="ITR/TAX" selected>ITR/TAX</option>
       <option value="Compalint">Complaint</option>
@@ -14,9 +14,11 @@
       <option value="Loan">Loan</option>
       <option value="Others">Others</option>
     </select>
-    <textarea type="message" name="message" class="search" rows="4" cols="50" style="height:100%" required
+
+    <textarea id="message" type="message" name="message" class="search" rows="4" cols="50" style="height:100%" required
       placeholder="Please type your query."></textarea>
-<input type="type" name="type" value="form submit" hidden />
+    <p id="char-count" class="charcount">0/500</p>
+    <input type="type" name="type" value="form submit" hidden />
     <button type="submit" name="submit" area-lable-name="submit" class="btnsubmit">SUBMIT</button>
   </div>
 </form>
