@@ -188,12 +188,12 @@
 
         <script>
         document.addEventListener('DOMContentLoaded', function() {
-            fetch('subscribe/subscribe.html')
+            fetch('forms/subscribe.html')
             .then(response => response.text())
             .then(html => {
                 document.getElementById('subscribe-widget').innerHTML = html;
                 const script = document.createElement('script');
-                script.src = 'subscribe/subscribe.js';
+                script.src = 'forms/subscribe.js';
                 document.body.appendChild(script);
             })
             .catch(error => console.error('Error:', error));
