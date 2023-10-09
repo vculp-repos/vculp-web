@@ -3,6 +3,7 @@
 
 <head>
     <title>Driver Issues Sahayta Kendra | vculp.org</title>
+    <meta charset="UTF-8">
     <meta name="robots" content="noindex, nofollow">
 
     <!-- Google tag (gtag.js) -->
@@ -34,13 +35,13 @@
     </script>
 </head>
 
-<body>
+<body onload="setLanguageFromUrl();">
     <div class="container">
         <div class="header">
             <a href="/">
                 <div class="logo"><img src="images/vculp-logo.png" alt="Logo">
                     <span>vculp.org
-                        <small>A Non-Profit Marketplace</small></span>
+                        <small>A Non-Profit Company</small></span>
                 </div>
             </a>
             <div class="mobileMenu">
@@ -58,7 +59,7 @@
                     <button name="close" aria-label-name="closemenu" class="closemenu"></button>
                     <div class="logo"><img src="images/vculp-logo.png" alt="Logo" />
                         <span>vculp.org
-                            <small>A Non-Profit Marketplace</small></span>
+                            <small>A Non-Profit Company</small></span>
                     </div>
                     <ul>
                         <li><a href="ourstory.html">Our Story</a></li>
@@ -73,8 +74,13 @@
             </div>
         </div>
         <div class="middlecontainer aboutusbg">
-            <div class="aboutus">
-                <h1>Unlock Financial Freedom: Why and How Filing ITR Benefits Cab Drivers</h1>
+            <select class="langdrop" id="languageDropdown" onchange="changeLanguage(this.value)">
+                <option value="hi">Hindi</option>
+                <option value="en">English</option>
+            </select>
+            <div id="content">
+                <div class="aboutus" id="englishContent" style="display: none;">
+                    <h1>Unlock Financial Freedom: Why and How Filing ITR Benefits Cab Drivers</h1>
                         <p><br></p>
                         <p>As a cab driver, you&apos;re always on the move, working tirelessly to serve your passengers.
                             But have you ever considered how filing your Income Tax Return (ITR) can be a game-changer
@@ -82,100 +88,163 @@
                             your financial future.</p>
                         <p><br></p>
                         <h2>Why File ITR as a Cab Driver?</h2>
-                                <p><br></p>
-                                <p>1.&nbsp;<strong>Legal Compliance:</strong>&nbsp;Filing your ITR is not just an
-                                    option; it&apos;s a legal obligation. Avoid penalties and legal troubles by staying
-                                    compliant with tax regulations.</p>
-                                <p><br></p>
-                                <p>2.&nbsp;<strong>Maximize Tax Savings:</strong>&nbsp;Filing ITR allows you to claim
-                                    deductions and exemptions, reducing your taxable income and maximizing your savings.
-                                    As a cab driver, you may be eligible for deductions on fuel, maintenance, insurance,
-                                    and more.</p>
-                                <p><br></p>
-                                <p>3.&nbsp;<strong>Access Financial Benefits:</strong>&nbsp;Your ITR serves as proof of
-                                    income, which is crucial for obtaining loans, visas, or government benefits. Ensure
-                                    you have the necessary documentation to access these opportunities.</p>
-                                <p><br></p>
-                                <p>4.&nbsp;<strong>Financial Planning:</strong>&nbsp;Filing ITR helps you keep track of
-                                    your earnings and expenses, enabling better financial planning for the future,
-                                    including retirement savings and investments.</p>
-                                <p><br></p>
-                                <h2>How to File ITR: It&apos;s Easier Than You Think!</h2>
-                                <p><br></p>
-                                <p>Filing your income tax return (ITR) might appear overwhelming, but we&apos;ve made it
-                                    easier for taxi drivers like yourself. Simply complete the form below to begin, and
-                                    our team of experts will assist you through each stage of the process.</p>
-                                <p><br></p>
-                                <div class="registrationform" id="register-widget"></div>
-
-                                <script>
-                                    document.addEventListener('DOMContentLoaded', function () {
-                                        fetch('forms/registration.html')
-                                            .then(response => response.text())
-                                            .then(html => {
-                                                document.getElementById('register-widget').innerHTML = html;
-                                                const script = document.createElement('script');
-                                                script.src = 'forms/register.js';
-                                                document.body.appendChild(script);
-                                            })
-                                            .catch(error => console.error('Error:', error));
-                                    });
-                                </script>
-                                <p><br></p>
-                                <p>Don&apos;t let tax season stress you out. Take the first step towards financial
-                                        freedom by filing your ITR today. Our team is here to support you, ensuring you
-                                        make the most of your hard-earned money. Fill out the form above, and let&apos;s
-                                        embark on your journey to financial success together.</p>
-                                <p><br></p>
+                        <p><br></p>
+                        <p>1.&nbsp;<strong>Legal Compliance:</strong>&nbsp;Filing your ITR is not just an
+                            option; it&apos;s a legal obligation. Avoid penalties and legal troubles by staying
+                            compliant with tax regulations.</p>
+                        <p><br></p>
+                        <p>2.&nbsp;<strong>Maximize Tax Savings:</strong>&nbsp;Filing ITR allows you to claim
+                            deductions and exemptions, reducing your taxable income and maximizing your savings.
+                            As a cab driver, you may be eligible for deductions on fuel, maintenance, insurance,
+                            and more.</p>
+                        <p><br></p>
+                        <p>3.&nbsp;<strong>Access Financial Benefits:</strong>&nbsp;Your ITR serves as proof of
+                            income, which is crucial for obtaining loans, visas, or government benefits. Ensure
+                            you have the necessary documentation to access these opportunities.</p>
+                        <p><br></p>
+                        <p>4.&nbsp;<strong>Financial Planning:</strong>&nbsp;Filing ITR helps you keep track of
+                            your earnings and expenses, enabling better financial planning for the future,
+                            including retirement savings and investments.</p>
+                        <p><br></p>
+                        <h2>How to File ITR: It&apos;s Easier Than You Think!</h2>
+                        <p><br></p>
+                        <p>Filing your income tax return (ITR) might appear overwhelming, but we&apos;ve made it
+                            easier for taxi drivers like yourself. Simply complete the form below to begin, and
+                            our team of experts will assist you through each stage of the process.</p>
+                        <p><br></p>
+                        <h2>Register your Query</h2>
+                        <p>Please fill the form below and we'll reach you as early as possible</p>
+                        <div class="registrationform" id="register-widget"></div>
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function () {
+                                fetch('forms/registration.html')
+                                    .then(response => response.text())
+                                    .then(html => {
+                                        document.getElementById('register-widget').innerHTML = html;
+                                        const script = document.createElement('script');
+                                        script.src = 'forms/register.js';
+                                        document.body.appendChild(script);
+                                    })
+                                    .catch(error => console.error('Error:', error));
+                            });
+                        </script>
+                        <p><br></p>
+                        <p>Don&apos;t let tax season stress you out. Take the first step towards financial
+                            freedom by filing your ITR today. Our team is here to support you, ensuring you
+                            make the most of your hard-earned money. Fill out the form above, and let&apos;s
+                            embark on your journey to financial success together.</p>
+                        <p><br></p>
+                </div>
+                <div class="aboutus" id="hindiContent">
+                    <h1>वित्तीय स्वतंत्रता को अनलॉक कर दिया है: क्यों और कैसे आईटीआर दाखिल करने से कैब ड्राइवरों को लाभ होता है</h1>
+                        <p><br></p>
+                        <p>एक कैब ड्राइवर के रूप में, आप हमेशा गतिशील रहते हैं, अपने यात्रियों की सेवा के लिए अथक प्रयास करते हैं। लेकिन क्या आपने कभी इस बात पर विचार किया है कि आप जैसे टैक्सी ड्राइवरों के लिए अपना आयकर रिटर्न दाखिल करना कैसा होगा। शुरू करने के लिए बस नीचे दिया गया फॉर्म भरें, और हमारे विशेषज्ञों की टीम प्रक्रिया के प्रत्येक चरण में आपकी सहायता करेगी।</p>
+                        <p><br></p>
+                        <h2>कैब ड्राइवर के रूप में आईटीआर क्यों दाखिल करें?</h2>
+                        <p><br></p>
+                        <p><strong>1. कानूनी अनुपालन:</strong> अपना आईटीआर दाखिल करना सिर्फ एक विकल्प नहीं है; यह एक कानूनी बाध्यता है. कर नियमों का अनुपालन करके जुर्माने और कानूनी परेशानियों से बचें।</p>
+                        <p><br></p>
+                        <p><strong>2. कर बचत को अधिकतम करें:</strong> आईटीआर दाखिल करने से आप कटौती और छूट का दावा कर सकते हैं, अपनी कर योग्य आय को कम कर सकते हैं और अपनी बचत को अधिकतम कर सकते हैं। एक कैब ड्राइवर के रूप में, आप ईंधन, रखरखाव, बीमा और बहुत कुछ पर कटौती के पात्र हो सकते हैं।</p>
+                        <p><br></p>
+                        <p><strong>3. वित्तीय लाभ प्राप्त करें:</strong> आपका आईटीआर आय के प्रमाण के रूप में कार्य करता है, जो ऋण, वीजा या सरकारी लाभ प्राप्त करने के लिए महत्वपूर्ण है। सुनिश्चित करें कि आपके पास इन अवसरों तक पहुँचने के लिए आवश्यक दस्तावेज़ हैं।</p>
+                        <p><br></p>
+                        <p><strong>4. वित्तीय योजना:</strong> आईटीआर दाखिल करने से आपको अपनी कमाई और खर्चों पर नज़र रखने में मदद मिलती है, जिससे सेवानिवृत्ति बचत और निवेश सहित भविष्य के लिए बेहतर वित्तीय योजना बनाने में मदद मिलती है।</p>
+                        <p><br></p>
+                        <h2>आईटीआर कैसे दाखिल करें: यह जितना आप सोचते हैं उससे कहीं अधिक आसान है!</h2>
+                        <p><br></p>
+                        <p>अपना आयकर रिटर्न (आईटीआर) दाखिल करना कठिन लग सकता है, लेकिन हमने आप जैसे टैक्सी ड्राइवरों के लिए इसे आसान बना दिया है। शुरू करने के लिए बस नीचे दिया गया फॉर्म भरें, और हमारे विशेषज्ञों की टीम प्रक्रिया के प्रत्येक चरण में आपकी सहायता करेगी।</p>
+                        <p><br></p>
+                        <h2>अपनी क्वेरी पंजीकृत करें</h2>
+                        <p>कृपया नीचे दिया गया फॉर्म भरें और हम यथाशीघ्र आप तक पहुंचेंगे</p>
+                        <div class="registrationform" id="register-widget-hi"></div>
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function () {
+                                fetch('forms/registration.html')
+                                    .then(response => response.text())
+                                    .then(html => {
+                                        document.getElementById('register-widget-hi').innerHTML = html;
+                                        const script = document.createElement('script');
+                                        script.src = 'forms/register.js';
+                                        document.body.appendChild(script);
+                                    })
+                                    .catch(error => console.error('Error:', error));
+                            });
+                        </script>
+                        <p><br></p>
+                        <p>टैक्स सीज़न को अपने ऊपर तनावग्रस्त न होने दें। आज ही अपना आईटीआर दाखिल करके वित्तीय स्वतंत्रता की ओर पहला कदम उठाएं। हमारी टीम आपका समर्थन करने के लिए यहां है, यह सुनिश्चित करते हुए कि आप अपनी मेहनत की कमाई का अधिकतम लाभ उठा सकें। उपरोक्त फॉर्म भरें, और आइए वित्तीय सफलता की ओर एक साथ अपनी यात्रा शुरू करें।</p>
+                        <p><br></p>
             </div>
-        </div>
-        <!-- <div class="subscribebox">
+            <!-- <div class="subscribebox">
             <h3>Subscribe Us</h3>
             <p>Keep watching this space for latest updates, upcoming projects & announcements</p>
             <div class="inputboxouter">
                 <input type="text" name="subscribe" class="search" /><button name="submit" area-lable-name="submit" class="btnsubmit">Subscribe</button>
             </div>
         </div> -->
-
-        <div class="footer">
-            <div class="footerbg">
-                <div class="footerIn">
-                    <div class="leftbox1">
-                        <div class="footerlogo"><img src="images/vculp-logo.png" alt="Logo" />
-                            <span>vculp.org
-                                <small>A Non-Profit Marketplace</small></span>
+        <script>
+            function changeLanguage(selectedLanguage) {
+                const englishContent = document.getElementById("englishContent");
+                const hindiContent = document.getElementById("hindiContent");
+    
+                if (selectedLanguage === "en") {
+                    languageDropdown.value = 'en';
+                    englishContent.style.display = "block";
+                    hindiContent.style.display = "none";
+                } else {
+                    languageDropdown.value = 'hi';
+                    englishContent.style.display = "none";
+                    hindiContent.style.display = "block";
+                }
+            }
+    
+            // Function to set the language based on the URL parameter
+            function setLanguageFromUrl() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const langParam = urlParams.get("lang");
+                if (langParam) {
+                    changeLanguage(langParam);
+                }
+            }
+        </script>
+            <div class="footer">
+                <div class="footerbg">
+                    <div class="footerIn">
+                        <div class="leftbox1">
+                            <div class="footerlogo"><img src="images/vculp-logo.png" alt="Logo" />
+                                <span>vculp.org
+                                    <small>A Non-Profit Company</small></span>
+                            </div>
+                            <ul>
+                                <li><a href="javscript;//" class="fbicon">Facebook</a></li>
+                                <li><a href="javscript;//" class="twticon">Twitter</a></li>
+                                <li><a href="javscript;//" class="instaicon">Instagram</a></li>
+                            </ul>
                         </div>
-                        <ul>
-                            <li><a href="javscript;//" class="fbicon">Facebook</a></li>
-                            <li><a href="javscript;//" class="twticon">Twitter</a></li>
-                            <li><a href="javscript;//" class="instaicon">Instagram</a></li>
-                        </ul>
+                        <div class="leftbox2">
+                            <ul>
+                                <li>Quick Links</li>
+                                <li>&nbsp;</li>
+                                <li><a href="ourstory.html">About Us</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="https://forms.gle/WtJXTgQ3Vo5C7EeC8">Contact</a></li>
+                                <!--    <li><a href="javascript://">FAQ</a></li> -->
+                            </ul>
+                        </div>
+                        <div class="leftbox2">
+                            <ul>
+                                <li>Legal Stuff</li>
+                                <li>&nbsp;</li>
+                                <!--  <li><a href="javascript://">Disclaimer</a></li> -->
+                                <li><a href="javascript://">Financing</a></li>
+                                <li><a href="privacy.html">Privacy Policy</a></li>
+                                <li><a href="terms.html">Terms of Service</a></li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="leftbox2">
-                        <ul>
-                            <li>Quick Links</li>
-                            <li>&nbsp;</li>
-                            <li><a href="ourstory.html">About Us</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="https://forms.gle/WtJXTgQ3Vo5C7EeC8">Contact</a></li>
-                            <!--    <li><a href="javascript://">FAQ</a></li> -->
-                        </ul>
-                    </div>
-                    <div class="leftbox2">
-                        <ul>
-                            <li>Legal Stuff</li>
-                            <li>&nbsp;</li>
-                            <!--  <li><a href="javascript://">Disclaimer</a></li> -->
-                            <li><a href="javascript://">Financing</a></li>
-                            <li><a href="privacy.html">Privacy Policy</a></li>
-                            <li><a href="terms.html">Terms of Service</a></li>
-                        </ul>
-                    </div>
+                    <div class="copyrighttxt">© 2023 vculp.org All rights reserved.</div>
                 </div>
-                <div class="copyrighttxt">© 2023 vculp.org All rights reserved.</div>
             </div>
         </div>
-    </div>
 </body>
 
 </html>
