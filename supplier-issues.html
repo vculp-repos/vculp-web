@@ -114,13 +114,13 @@
                         <p><br></p>
                         <h2>Register your Query</h2>
                         <p>Please fill the form below and we'll reach you as early as possible</p>
-                        <div class="registrationform" id="register-widget"></div>
+                        <div class="registrationform" id="register-widget-en"></div>
                         <script>
                             document.addEventListener('DOMContentLoaded', function () {
                                 fetch('forms/registration.html')
                                     .then(response => response.text())
                                     .then(html => {
-                                        document.getElementById('register-widget').innerHTML = html;
+                                        document.getElementById('register-widget-en').innerHTML = html;
                                         const script = document.createElement('script');
                                         script.src = 'forms/register.js';
                                         document.body.appendChild(script);
@@ -156,13 +156,13 @@
                         <p><br></p>
                         <h2>अपनी क्वेरी पंजीकृत करें</h2>
                         <p>कृपया नीचे दिया गया फॉर्म भरें और हम यथाशीघ्र आप तक पहुंचेंगे</p>
-                        <div class="registrationform" id="register-widget-hi"></div>
+                        <div class="registrationform" id="register-widget"></div>
                         <script>
                             document.addEventListener('DOMContentLoaded', function () {
                                 fetch('forms/registration.html')
                                     .then(response => response.text())
                                     .then(html => {
-                                        document.getElementById('register-widget-hi').innerHTML = html;
+                                        document.getElementById('register-widget').innerHTML = html;
                                         const script = document.createElement('script');
                                         script.src = 'forms/register.js';
                                         document.body.appendChild(script);
