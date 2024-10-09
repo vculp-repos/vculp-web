@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Route Visualization using Polyline & Polygon</title>
+  <style>
+p {
+  font-weight:600;
+	 font-size:20px;
+  }
+  .maprender {
+  width: 70%; 
+  height: 400px;
+  float:right;
+  }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+	  table-layout: fixed;
+    }
+
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+      width: 200px;
+	  vertical-align:top;
+	  word-wrap: break-word;
+    }
+
+    th {
+      background-color: #f2f2f2;
+	  }
+	.counttoll {
+	 color:#FF0000;
+	 font-weight:600;
+	 font-size:20px;
+    }
+	
+	 .button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {background-color: #4CAF50;}
+.button2 {background-color: #f9da78;color: black;}
+  </style>
+</head>
+<body>
+  <div id="map" style="display:none;" class="maprender"></div>
+
+  <div class="formrender"><h1>Route Visualization using Polyline & Polygon</h1>
+  
+    <p>Enter Source:</p>
+  <input type="text" id="source" placeholder="Source" value="28.4608058,77.0815858">
+  
+  <p>Enter Destination:</p>
+  <input type="text" id="destination" placeholder="Destination" value="28.386707059282887, 77.2823293395955">  
+  
+  <p>Enter Polygon (Comma-separated lat/lng pairs):</p>
+  <textarea id="polygon" placeholder="Polygon" rows="5" cols="40">28.41766351899666, 77.16163963983959
+28.414077766231276, 77.15927929590649
+28.409095255576776, 77.15790600489086
+28.40705688820936, 77.15975136469311
+28.405358218774964, 77.16502995203442
+28.40547146425129, 77.17133850763744
+28.407660852999932, 77.17425675104565
+28.410793865086795, 77.17721790979809
+28.41453071012243, 77.17610211084789
+28.41675765607621, 77.1724113912434
+28.41853163035686, 77.1689352483601
+28.418418398843915, 77.16515869806713</textarea>
+  <br>
+  <button onclick="calculateRoute()" class="button button1">Calculate Route</button>
+  <button onclick="loadMap()" class="button button2">Load Map</button>
+  
+  <p id="tollsDetected" style="display: none;" class="counttoll"></p>
+  </div>
+  
+  <div id="stepsTable"></div>
+  
+  <script>
+    let map;
+    let polygon;
+
+    function loadMap() {
+      map.setZoom(12);
+      var showmap = document.getElementById("map");
+    showmap.style.display = "block";
+    }
+
+    function initMap() {
+      map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: 28.417268, lng: 77.2315 },
+        zoom: 12
+      });
+
+      const sourceInput = document.getElementById("source");
+      const destinationInput = document.getElementById("destination");
+
+      const options = {
+        types: ["geocode"]
+      };
+
+      const autocompleteSource = new google.maps.places.Autocomplete(sourceInput, options);
+      const autocompleteDestination = new google.maps.places.Autocomplete(destinationInput, options);
+    }
+
+    function loadGoogleMapsScript(callback) {
+      const script = document.createElement("script");
+      script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyD75XaxboNNnHzDixaMq27y1oiPjdunKeU&libraries=places,geometry&callback=${callback}`;
+      script.defer = true;
+      document.head.appendChild(script);
+    }
+
+    function calculateRoute() {
+      const source = document.getElementById("source").value;
+      const destination = document.getElementById("destination").value;
+      const polygonInput = document.getElementById("polygon").value;
+
+      const polygonCoords = parsePolygonString(polygonInput);
+      if (!polygonCoords) {
+        document.getElementById("stepsTable").innerHTML = "Invalid Polygon.";
+        return;
+      }
+
+      const directionsService = new google.maps.DirectionsService();
+
+      const request = {
+        origin: source,
+        destination: destination,
+        travelMode: google.maps.TravelMode.DRIVING
+      };
+
+      directionsService.route(request, function(result, status) {
+        if (status === google.maps.DirectionsStatus.OK) {
+          const route = result.routes[0];
+          const legs = route.legs[0];
+          const steps = legs.steps;
+
+          // Clear previous polygon and route
+          if (polygon) {
+            polygon.setMap(null);
+          }
+
+          let stepsTableHTML = "<h2>Steps in the Route</h2>";
+          stepsTableHTML += "<table>";
+          stepsTableHTML += "<tr><th>Step</th><th>Start Lat/Lng</th><th>End Lat/Lng</th><th>Distance (KM)</th><th>Intersects Polygon</th><th>Polyline</th><th>Encoded Polyline</th></tr>";
+
+          let tollCount = 0;
+
+          for (let i = 0; i < steps.length; i++) {
+            const step = steps[i];
+            const startLatLng = step.start_location;
+            const endLatLng = step.end_location;
+            const distance = (step.distance.value / 1000).toFixed(2);
+            const polyline = google.maps.geometry.encoding.decodePath(step.polyline.points);
+            const intersectsPolygon = checkIntersectionWithPolygon(polyline, polygonCoords) ? "Yes" : "No";
+            const polylineString = polyline.map(point => point.toString()).join('<br>');
+            const encodedPolyline = step.polyline.points;
+
+            stepsTableHTML += `<tr><td>${step.instructions}</td><td>${startLatLng.toString()}</td><td>${endLatLng.toString()}</td><td>${distance}</td><td>${intersectsPolygon}</td><td>${polylineString}</td><td>${encodedPolyline}</td></tr>`;
+
+            if (intersectsPolygon === "Yes") {
+              tollCount++;
+            }
+          }
+
+          document.getElementById("tollsDetected").textContent = `${tollCount} TOLLs DETECTED:`;
+          document.getElementById("tollsDetected").style.display = "block";
+          
+          stepsTableHTML += "</table>";
+          document.getElementById("stepsTable").innerHTML = stepsTableHTML;
+
+          // Draw the route on the map
+          const directionsRenderer = new google.maps.DirectionsRenderer({
+            map: map,
+            suppressMarkers: true
+          });
+          directionsRenderer.setDirections(result);
+
+          // Draw the polygon on the map
+          const polygonPath = polygonCoords.map(coord => new google.maps.LatLng(coord.lat, coord.lng));
+          polygon = new google.maps.Polygon({
+            paths: polygonPath,
+            strokeColor: "#FF0000",
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: "#FF0000",
+            fillOpacity: 0.35
+          });
+          polygon.setMap(map);
+        }
+      });
+    }
+
+    function parsePolygonString(polygonString) {
+      const points = [];
+      const latLngArray = polygonString.split("\n");
+      for (let i = 0; i < latLngArray.length; i++) {
+        const latLng = latLngArray[i].trim().split(",");
+        if (latLng.length === 2) {
+          const lat = parseFloat(latLng[0]);
+          const lng = parseFloat(latLng[1]);
+          if (!isNaN(lat) && !isNaN(lng)) {
+            points.push({ lat: lat, lng: lng });
+          }
+        }
+      }
+      return points.length >= 3 ? points : null;
+    }
+
+    function checkIntersectionWithPolygon(polyline, polygonCoords) {
+      for (let i = 0; i < polyline.length - 1; i++) {
+        for (let j = 0; j < polygonCoords.length; j++) {
+          const currentVertex = polygonCoords[j];
+          const nextVertex = polygonCoords[(j + 1) % polygonCoords.length];
+
+          if (doIntersect(polyline[i].lat(), polyline[i].lng(), polyline[i + 1].lat(), polyline[i + 1].lng(), currentVertex.lat, currentVertex.lng, nextVertex.lat, nextVertex.lng)) {
+            return true;
+          }
+        }
+      }
+      return false;
+    }
+
+    function doIntersect(x1, y1, x2, y2, x3, y3, x4, y4) {
+      const den = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4);
+      
+      if (den === 0) return false;
+      
+      const t = ((x1 - x3) * (y3 - y4) - (y1 - y3) * (x3 - x4)) / den;
+      const u = -((x1 - x2) * (y1 - y3) - (y1 - y2) * (x1 - x3)) / den;
+      
+      return t >= 0 && t <= 1 && u >= 0 && u <= 1;
+    }
+
+    // Load Google Maps API
+    loadGoogleMapsScript("initMap");
+  </script>
+</body>
+</html>
