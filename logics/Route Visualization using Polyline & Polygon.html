@@ -114,7 +114,7 @@ p {
 
     function loadGoogleMapsScript(callback) {
       const script = document.createElement("script");
-      script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyD75XaxboNNnHzDixaMq27y1oiPjdunKeU&libraries=places,geometry&callback=${callback}`;
+      script.src = `https://maps.googleapis.com/maps/api/js?key=API_KEY&libraries=places,geometry&callback=${callback}`;
       script.defer = true;
       document.head.appendChild(script);
     }
